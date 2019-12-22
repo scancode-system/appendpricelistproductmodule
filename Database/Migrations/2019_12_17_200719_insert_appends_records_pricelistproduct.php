@@ -16,7 +16,7 @@ class InsertAppendsRecordsPricelistproduct extends Migration
     public function up()
     {
         $validation = Validation::where('module_name', 'ValidationProduct')->first();
-        Append::create(['validation_id' => $validation->id, 'module' => 'AppendPriceListProduct', 'alias' => 'Tabela de Preço Produto']);
+        Append::create(['validation_id' => $validation->id, 'module' => 'AppendPriceListProduct', 'alias' => 'Tabela de Preço Produto (Produto)']);
     }
 
     /**
