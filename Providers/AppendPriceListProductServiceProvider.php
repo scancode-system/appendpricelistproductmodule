@@ -8,6 +8,16 @@ use Illuminate\Database\Eloquent\Factory;
 class AppendPriceListProductServiceProvider extends ServiceProvider
 {
     /**
+     * @var string $moduleName
+     */
+    protected $moduleName = 'AppendPriceListProduct';
+
+    /**
+     * @var string $moduleNameLower
+     */
+    protected $moduleNameLower = 'appendpricelistproduct';
+
+    /**
      * Boot the application events.
      *
      * @return void
@@ -35,11 +45,18 @@ class AppendPriceListProductServiceProvider extends ServiceProvider
     protected function registerConfig()
     {
         $this->publishes([
+            module_path($this->moduleName, 'Config/config.php') => config_path($this->moduleNameLower . '.php'),
+        ], 'config');
+        $this->mergeConfigFrom(
+            module_path($this->moduleName, 'Config/config.php'), $this->moduleNameLower
+        );
+        
+        /*$this->publishes([
             __DIR__.'/../Config/config.php' => config_path('appendpricelistproduct.php'),
         ], 'config');
         $this->mergeConfigFrom(
             __DIR__.'/../Config/config.php', 'appendpricelistproduct'
-        );
+        );*/
     }
 
 
