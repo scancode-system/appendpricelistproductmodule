@@ -9,7 +9,7 @@ use Modules\Portal\Services\Validation\Data\InfoValidationService;
 class InfoService extends InfoValidationService
 {
 
-
+ 
 	public function rule($data, $index, $columns)
 	{
 		$fields = $this->fieldsPricePerQty($data);
@@ -44,7 +44,7 @@ class InfoService extends InfoValidationService
 		return $fields;
 	}
 
-	public function columnsFormat()
+	public function columnsFormat($header)
 	{
 		return  [];
 	}
