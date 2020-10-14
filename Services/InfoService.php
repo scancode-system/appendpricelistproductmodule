@@ -22,7 +22,7 @@ class InfoService extends InfoValidationService
 		return $rules;
 	}
 
-	public function modifiers()
+	public function modifiers($data)
 	{
 		$fields = $this->fieldsPricePerQty($data);
 
